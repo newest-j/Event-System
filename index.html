@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <title>Event System</title>
+    <link rel="stylesheet" href="homepage.css">
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-sm border border-danger px-5">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">EventBookingPro</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavbar">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-end " id="collapsibleNavbar">
+                <ul class="navbar-nav gap-5">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="signin.html">Create Events</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Find Events</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link bg-danger rounded" href="#">Contact Us</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container-fluid position-relative d-flex flex-column align-items-center text-center justify-content-center bg-secondary mt-5  rounded py-5 text-white"
+        id="hero">
+        <div class="position-absolute top-0 left-0 w-100 h-100 hero-overlay"></div>
+        <div class="hero-content">
+            <h4>Welcome to EventBookingPro</h4>
+            <p class="display-6">Your one-stop event scheduling platform!</p>
+            <p>Your premier event scheduling platform! Simplify event planning and<br>
+                booking with our user-friendly, efficient,and innovative solution.<br>
+                Get started now to experience seamiess event coordination like never before.
+            </p>
+            <a href="#" type="button" class="btn btn-danger">Get started</a>
+        </div>
+
+    </div>
+
+    <h2 class="w-100 pb-2 mt-5 ps-5 container-fluid">Upcoming Event</h2>
+    <hr>
+    <div class="row gap-5 container-fluid justify-content-center">
+        <div class="card pt-2" style="width: 18rem;">
+            <img src="images/medium-shot-man-wearing-vr-glasses.jpg" class="card-img-top" alt="...">
+            <div class="card-body">
+                <h5 class="card-title">Tech Meetup</h5>
+                <p class="card-text">We're hosting a Tech Meetup and would love for you to join us! This is a great
+                    opportunity to network, share ideas, and discuss the latest trends in technology.</p>
+                <hr>
+                <p class="text-secondary">
+                    Tommorow, 5:00pm(+01:00 GMT)
+                </p>
+                <a href="#" data-bs-toggle="modal" data-bs-target="#Modal3" class="btn btn-danger">Read more</a>
+                <a href="#" class="btn btn-primary" id="register">Register</a>
+            </div>
+        </div>
+
+        <div class="card pt-2" style="width: 18rem;">
+            <img src="images/decorwedding-table-restaurant.jpg" class="card-img-top" alt="...">
+            <div class="card-body">
+                <h5 class="card-title">Wedding</h5>
+                <p class="card-text">With joyful hearts and immense love, we invite you to celebrate as we begin our
+                    forever journey together!</p>
+                <hr>
+                <p class="text-secondary">
+                    Tommorow, 3:00pm(+01:00 GMT)
+                </p>
+                <a href="#" data-bs-toggle="modal" data-bs-target="#Modal2" class="btn btn-danger">Read more</a>
+                <a href="#" class="btn btn-primary" id="register">Register</a>
+            </div>
+        </div>
+
+        <div class="card pt-2" style="width: 18rem;">
+            <img src="images/multiracial-business-people-standing-office-discuss-together-diverse-group-employees-formal-wear.jpg"
+                class="card-img-top" alt="...">
+            <div class="card-body">
+                <h5 class="card-title">Business Meetup</h5>
+                <p class="card-text">We are excited to invite you to an exclusive Business Meetup, where like-minded
+                    professionals, innovators, and entrepreneurs come together to network, share insights, and explore
+                    new opportunities!</p>
+                <hr>
+                <p class="text-secondary">
+                    Tommorow, 10:00am(+01:00 GMT)
+                </p>
+                <a href="#" data-bs-toggle="modal" data-bs-target="#Modal" class="btn btn-danger">Read more</a>
+                <a href="#" class="btn btn-primary" id="register">Register</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="Modal" tabindex="-1" aria-labelledby="ModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="ModalLabel">Business meetup</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <p>
+                        Come ready to collaborate, learn, and grow! Don’t miss out on this opportunity to build
+                        meaningful connections and take your business to the next level.
+
+                        We look forward to seeing you there! 🚀
+
+                        #BusinessMeetup #Networking #Entrepreneurship #BusinessGrowth
+                    </p>
+                    <p>Location: Yaba Lagos</p>
+                    <p>Theme: Farm Planinig</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">cancel</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="Modal3" tabindex="-1" aria-labelledby="ModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="ModalLabel">Tech Meetup</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <p>Whether you're a developer, designer, entrepreneur, or just passionate about tech, this is the
+                        perfect place to connect with like-minded individuals and expand your knowledge.
+
+                        Come ready to learn, share, and collaborate! Don’t forget to bring your questions, projects, and
+                        enthusiasm.
+                    </p>
+                    <p>Location: Ikeja Lagos</p>
+                    <p>Theme: Actificial Intelligence</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">cancel</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="Modal2" tabindex="-1" aria-labelledby="ModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="ModalLabel">Wedding</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <p>Your presence would mean the world to us as we exchange our vows and create beautiful memories
+                        together. Come ready to celebrate, laugh, dance, and share in our happiness!
+
+                        Kindly RSVP by [April 1,2025] to [+234-704-345-3445].
+
+                        We can’t wait to celebrate with you! 🎉💖
+
+                        With love,
+                        [MR and MRS JOHNSON]
+
+                        #OurBigDay #WeddingCelebration #HappilyEverAfter
+                    </p>
+                    <p>Location: Lekki Lagos</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">cancel</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container-fluid bg-dark mt-4 py-3 ">
+        <footer class="d-flex justify-content-center gap-5">
+            <div>
+                <ul>
+                    <li>Explore</li>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">Feature</a></li>
+                    <li><a href="#">Pricing</a></li>
+                    <li><a href="#">Demo</a></li>
+                    <li><a href="#">FQA</a></li>
+                </ul>
+            </div>
+            <div>
+                <ul>
+                    <li>Contact-us</li>
+                    <li><a href="#">Connect-with-us</a></li>
+                    <li><a href="#">Facebook</a></li>
+                    <li><a href="#">Twitter</a></li>
+                    <li><a href="#">LinkedIn</a></li>
+                    <li><a href="#">Instagram</a></li>
+                </ul>
+            </div>
+            <div>
+                <ul>
+                    <li>Resources</li>
+                    <li><a href="#">Blog</a></li>
+                    <li><a href="#">Guides</a></li>
+                    <li><a href="#">Webinars</a></li>
+                    <li><a href="#">Case Studies</a></li>
+                </ul>
+            </div>
+            <div>
+                <ul>
+                    <li>Legal</li>
+                    <li><a href="#">Privacy Policy</a></li>
+                    <li><a href="#">Terms of Services</a></li>
+                    <li><a href="#">Cookie Policy</a></li>
+                    <li><a href="#">Cookies</a></li>
+                </ul>
+            </div>
+            <div>
+                <p>Email: support@Eventcore.com</p>
+                <p>Phone: +234-704-673-2255</p>
+                <p>Copyright 2025 Eventcore,Inc. All Rights Reserved.</p>
+            </div>
+        </footer>
+    </div>
+    <script src="homepage.js">
+    </script>
+</body>
+
+</html>
