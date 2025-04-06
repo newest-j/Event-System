@@ -1,0 +1,33 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: 0;
+}
+footer ul li a{
+    /* color: white; */
+    text-decoration: none;
+    list-style-type: none;
+}
+footer ul li {
+    color: gray;
+    list-style-type: none;
+}
+footer p{
+    color: white;
+}
+#hero{
+    background:url(images/vecteezy_businessperson-updating-schedules-or-planning-business_24162298.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 600px;
+    /* opacity: 0.8; */
+}
+
+.hero-overlay{
+    background-color: rgba(0, 0, 0, 0.637);
+    z-index: 1;
+}
+
+.hero-content{
+    z-index: 2;
+}

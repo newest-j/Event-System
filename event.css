@@ -1,0 +1,29 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+@media (max-width: 768px) {
+    #offcanvasToggle {
+        display: block;
+    }
+     #mysidebar{
+        display: none !important;
+    }
+    .card {
+        min-width: 300px;
+        max-width: 100%;
+    }
+    main {
+        width: 100%;
+        margin: auto;
+        text-align: center;
+    }
+}
+@media (min-width: 769px) {
+    #offcanvasToggle {
+        display: none;
+    }
+    
+    
+}

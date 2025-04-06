@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+        integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <link rel="stylesheet" href="event.css">
+    <title>Event System</title>
+</head>
+<body>
+    <!-- Offcanvas Sidebar Toggle Button -->
+    <button class="btn btn-dark d-md-none m-3" type="button" data-bs-toggle="offcanvas" data-bs-target="#sidebar"
+        aria-controls="sidebar">
+        <i class="fa-solid fa-bars"></i>
+    </button>
+
+    <!-- Offcanvas Sidebar -->
+    <div class="offcanvas offcanvas-start bg-dark text-white" tabindex="-1" id="sidebar" aria-labelledby="sidebarLabel"
+        style="width: 280px;">
+        <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="sidebarLabel">Event Core</h5>
+            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas"
+                aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body d-flex flex-column p-3">
+            <ul class="nav nav-pills flex-column mb-auto">
+                <li class="nav-item">
+                    <a href="user.html" class="nav-link active">
+                        <i class="fa-solid fa-house"></i> Home
+                    </a>
+                </li>
+                <li>
+                    <a href="#" class="nav-link text-secondary">
+                        <i class="fa-solid fa-chart-line"></i> Dashboard
+                    </a>
+                </li>
+                <li>
+                    <a href="event.html" class="nav-link text-secondary">
+                        <i class="fa-solid fa-calendar-days"></i> Event
+                    </a>
+                </li>
+                <li>
+                    <a href="#" class="nav-link text-secondary">
+                        <i class="fa-solid fa-money-check-dollar"></i> Subscription
+                    </a>
+                </li>
+            </ul>
+            <hr>
+            <div class="dropdown">
+                <a href="#" class="d-flex align-items-center text-white text-decoration-none dropdown-toggle"
+                    id="dropdownUser1" data-bs-toggle="dropdown" aria-expanded="false">
+                    <img src="https://github.com/Lucky360.png" alt="" width="32" height="32"
+                        class="rounded-circle me-2">
+                    <strong>Lucky360</strong>
+                </a>
+                <ul class="dropdown-menu dropdown-menu-dark text-small shadow" aria-labelledby="dropdownUser1">
+                    <li><a class="dropdown-item" href="#">New project...</a></li>
+                    <li><a class="dropdown-item" href="#">Settings</a></li>
+                    <li><a class="dropdown-item" href="#">Profile</a></li>
+                    <li>
+                        <hr class="dropdown-divider">
+                    </li>
+                    <li id="signout"><a class="dropdown-item" href="#">Sign out</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="d-flex">
+        <!-- sidebar -->
+        <div class="d-flex vh-100 position-sticky left-0 top-0 flex-column flex-shrink-0 p-3 text-white bg-dark"
+            style="width: 280px;" id="mysidebar">
+            <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-white text-decoration-none">
+                <span class="fs-4">Event core</span>
+            </a>
+            <hr>
+            <ul class="nav nav-pills flex-column mb-auto">
+                <li class="nav-item">
+                    <a href="user.html" class="nav-link active" aria-current="page">
+                        <i class="fa-solid fa-house"></i>
+                        Home
+                    </a>
+                </li>
+                <li>
+                    <a href="#" class="nav-link text-secondary">
+                        <i class="fa-solid fa-chart-line"></i>
+                        Dashboard
+                    </a>
+                </li>
+                <li>
+                    <a href="event.html" class="nav-link text-secondary">
+                        <i class="fa-solid fa-calendar-days"></i>
+
+                        Event
+                    </a>
+                </li>
+                <li>
+                    <a href="#" class="nav-link text-secondary">
+                        <i class="fa-solid fa-money-check-dollar"></i>
+                        Subscription
+                    </a>
+                </li>
+
+            </ul>
+            <hr>
+            <div class="dropdown">
+                <a href="#" class="d-flex align-items-center text-white text-decoration-none dropdown-toggle"
+                    id="dropdownUser1" data-bs-toggle="dropdown" aria-expanded="false">
+                    <img src="https://github.com/Lucky360.png" alt="" width="32" height="32"
+                        class="rounded-circle me-2">
+                    <strong>Lucky360</strong>
+                </a>
+                <ul class="dropdown-menu dropdown-menu-dark text-small shadow" aria-labelledby="dropdownUser1">
+                    <li><a class="dropdown-item" href="#">New project...</a></li>
+                    <li><a class="dropdown-item" href="#">Settings</a></li>
+                    <li><a class="dropdown-item" href="#">Profile</a></li>
+                    <li>
+                        <hr class="dropdown-divider">
+                    </li>
+                    <li id="signout"><a class="dropdown-item" href="#">Sign out</a></li>
+                </ul>
+            </div>
+        </div>
+
+    <main class="p-4 text-center container-fluid" style="width:calc(100% - 280px);">
+        <h2 class="w-100 pb-2">Overview</h2>
+        <hr>
+        <div class="row gap-4 justify-content-center">
+            <div class="card shadow-lg col-lg-3 col-mg-6 col-11 p-2">
+                <h2 class="card-title">Total minutes spent <span class="secondary fs-6 fw-light">(in
+                        meetings)</span></h2>
+                <hr>
+                <p class="fs-1 text-primary">1223</p>
+            </div>
+
+            <div class="card shadow-lg col-lg-3 col-mg-6 col-11 p-2">
+                <h2 class="card-title">Total users enrolled <span class="secondary fs-6 fw-light">(in
+                        meetings)</span></h2>
+                <hr>
+                <p class="fs-1 text-primary">100k+</p>
+            </div>
+
+            <div class="card shadow-lg col-lg-3 col-mg-6 col-11 p-2">
+                <h2 class="card-title">Total meetings <span class="secondary fs-6 fw-light">(in meetings)</span>
+                </h2>
+                <hr>
+                <p class="fs-1 text-primary">1000</p>
+            </div>
+        </div>
+
+        <h2 class="w-100 pb-2 mt-5">Upcoming Event</h2>
+        <hr>
+        <div class="row gap-4 justify-content-center">
+            <div class="card pt-2" style="width: 18rem;">
+                <img src="images/medium-shot-man-wearing-vr-glasses.jpg" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">Tech Meetup</h5>
+                    <p class="card-text">we're hosting a Tech Meetup and would love for you to join us! This is a
+                        great
+                        opportunity to network, share ideas, and discuss the latest trends in technology.</p>
+                    <hr>
+                    <p class="text-secondary">
+                        Tommorow, 5:00pm(+01:00 GMT)
+                    </p>
+                    <a href="#" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#Modal">Register</a>
+                    <a href="#" class="btn btn-danger">Decline</a>
+                </div>
+            </div>
+
+            <div class="card pt-2" style="width: 18rem;">
+                <img src="images/decorwedding-table-restaurant.jpg" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">Wedding</h5>
+                    <p class="card-text">With joyful hearts and immense love, we invite you to celebrate as we begin
+                        our
+                        forever journey together!</p>
+                    <hr>
+                    <p class="text-secondary">
+                        Tommorow, 3:00pm(+01:00 GMT)
+                    </p>
+                    <a href="#" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#Modal">Register</a>
+                    <a href="#" class="btn btn-danger">Decline</a>
+                </div>
+            </div>
+
+            <div class="card pt-2" style="width: 18rem;">
+                <img src="images/multiracial-business-people-standing-office-discuss-together-diverse-group-employees-formal-wear.jpg"
+                    class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">Business Meetup</h5>
+                    <p class="card-text">We are excited to invite you to an exclusive Business Meetup, where
+                        like-minded
+                        professionals, innovators, and entrepreneurs come together to network, share insights, and
+                        explore
+                        new opportunities!</p>
+                    <hr>
+                    <p class="text-secondary">
+                        Tommorow, 10:00am(+01:00 GMT)
+                    </p>
+                    <a href="#" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#Modal">Register</a>
+                    <a href="#" class="btn btn-danger">Decline</a>
+                </div>
+            </div>
+        </div>
+
+        <h2 class="w-100 pb-2 mt-5">Past Event Highlights</h2>
+        <hr>
+        <div class="row gap-4 justify-content-center">
+            <div class="card pt-2" style="width: 18rem;">
+                <img src="images/decorated-banquet-hall-with-flowers.jpg" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">Birthday</h5>
+                    <p class="card-text">We're beyond excited to have [his/her/their] big day land during this
+                        amazing event.
+                        Let’s make it unforgettable with smiles, cheers, and good vibes all around! 🥳🎂🎈
+
+                        Don't forget to send your warm wishes and maybe sneak in a birthday selfie 📸💕
+
+                        #HappyBirthday #[Name] #EventVibes #CelebrateBig</p>
+
+                    <a href="#" class="btn btn-secondary">View Highlights</a>
+                </div>
+            </div>
+
+
+            <div class="card pt-2" style="width: 18rem;">
+                <img src="images/waiter-carries-plate-with-tasty-snacks.jpg" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">Banker's meetup</h5>
+                    <p class="card-text">The Bankers’ Meetup 2025 brought together industry leaders, financial
+                        experts, and visionary professionals under one roof to network, share insights, and shape
+                        the future of finance. 📊🌍
+
+                        From thought-provoking panels to powerful connections, every moment was a step toward
+                        smarter banking and stronger collaborations.</p>
+
+                    <a href="#" class="btn btn-secondary">View Highlights</a>
+                </div>
+            </div>
+
+
+            <div class="card pt-2" style="width: 18rem;">
+                <img src="images/rich-dinner-tables-covered-with-blue-clothes-sparkling-glass.jpg"
+                    class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">International women's day</h5>
+                    <p class="card-text">What a powerful and inspiring celebration!
+                        On March 8th, we came together to honor the strength, brilliance, and resilience of women
+                        everywhere.
+
+                        From impactful keynote speeches to empowering panel discussions, the day was filled with
+                        stories that moved us, ideas that challenged us, and connections that reminded us of the
+                        power of unity. 💪💜
+
+                    </p>
+
+                    <a href="#" class="btn btn-secondary">View Highlights</a>
+                </div>
+            </div>
+
+
+        </div>
+        
+        <div class="container mt-5">
+            <h2 class="mb-4">Event Details</h2>
+            <div id="eventCardContainer" class="row  gap-4 justify-content-center"></div>
+          </div>
+        
+    </main>
+</div>
+
+
+<div class="modal fade" id="Modal" tabindex="-1" aria-labelledby="ModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="ModalLabel">Schedule Meeting</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <input type="datetime-local" name="" id="" class="form-control">
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">cancel</button>
+                <button type="button" class="btn btn-primary">Submit</button>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="event.js"></script>
+</body>
+</html>
