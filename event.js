@@ -1,23 +1,3 @@
-const isLoggedIn = localStorage.getItem('user');
-
-// Check if the user is logged in, if not redirect to the signin page
-if (!isLoggedIn) {
-    window.location.href = "./signin.html";
-}
-
-// Get both signout elements
-const signoutButtons = document.querySelectorAll('#signout');
-
-// Add event listener for each signout button
-signoutButtons.forEach(button => {
-    button.addEventListener('click', (e) => {
-        e.preventDefault();
-        localStorage.removeItem('user');
-        window.location.href = "signin.html";
-    });
-});
-
-
 const eventData = JSON.parse(localStorage.getItem('events')) || [];
 
     // Check if there are any events stored
@@ -28,7 +8,7 @@ const eventData = JSON.parse(localStorage.getItem('events')) || [];
       for (let i = 0; i < eventData.length; i++) {
         const event = eventData[i];
         html += `
-          <div class="card shadow-lg mb-4 pt-2" style="width: 18rem;">
+          <div class="card shadow-lg mb-4" style="width: 18rem;">
             <img src="${event.image}" class="card-img-top" alt="Event Image">
             <div class="card-body">
               <h5 class="card-title">${event.name}</h5>
