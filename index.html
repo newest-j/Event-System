@@ -13,7 +13,9 @@
 <body>
     <nav class="navbar navbar-expand-sm border border-danger px-5">
         <div class="container-fluid">
-            <a class="navbar-brand" href="#">EventBookingPro</a>
+            <a class="navbar-brand" href="#">
+                <img src="images/Logo.png" style="width:40px;" class="rounded-pill">
+                EventBookingPro</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavbar">
                 <span clas,ls="navbar-toggler-icon"></span>
             </button>
@@ -42,7 +44,7 @@
         <div class="hero-content">
             <h4>Welcome to EventBookingPro</h4>
             <p class="display-6">Your one-stop event scheduling platform!</p>
-            <p>Your premier event scheduling platform! Simplify event planning and<br>
+            <p id="hero-text">Your premier event scheduling platform! Simplify event planning and<br>
                 booking with our user-friendly, efficient,and innovative solution.<br>
                 Get started now to experience seamiess event coordination like never before.
             </p>
@@ -52,6 +54,7 @@
     </div>
 
     <h2 class="w-100 pb-2 mt-5 ps-5 container-fluid">Upcoming Event</h2>
+    <input type="text" class="ms-5" id="myInput" onkeyup="myFunction()" placeholder="Search for an event..">
     <hr>
     <div class="row gap-5 container-fluid justify-content-center">
         <div class="card pt-2" style="width: 18rem;">
@@ -102,8 +105,6 @@
         </div>
 
         <div class="container mt-5">
-            <h2 class="mb-4">Events</h2>
-            <hr>
             <div id="eventCardContainer" class="row btn-register  gap-4 justify-content-center"></div>
           </div>
     </div>

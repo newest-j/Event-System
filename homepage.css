@@ -24,10 +24,13 @@ footer p{
 }
 
 .hero-overlay{
-    background-color: rgba(0, 0, 0, 0.637);
+    background-color: rgba(0, 0, 0, 0.792);
     z-index: 1;
 }
 
 .hero-content{
     z-index: 2;
+}
+#hero-text{
+    font-size: 20px;
 }

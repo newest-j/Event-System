@@ -58,3 +58,22 @@ function generateEventCards() {
 document.addEventListener("DOMContentLoaded", generateEventCards);
 
 
+function myFunction() {
+    const input = document.getElementById("myInput");
+    const filter = input.value.toUpperCase();
+    const cards = document.querySelectorAll(".card");
+
+    cards.forEach(card => {
+        const titleElement = card.querySelector(".card-title");
+        const titleText = titleElement.textContent || titleElement.innerText;
+
+        if (titleText.toUpperCase().includes(filter)) {
+            card.style.display = "";
+        } else {
+            card.style.display = "none";
+        }
+    });
+}
+
+
+

@@ -1,4 +1,18 @@
+
 const eventData = JSON.parse(localStorage.getItem('events')) || [];
+
+// Get both signout elements
+const signoutButtons = document.querySelectorAll('#signout');
+
+// Add event listener for each signout button
+signoutButtons.forEach(button => {
+    button.addEventListener('click', (e) => {
+        e.preventDefault();
+        localStorage.removeItem('user');
+        window.location.href = "index.html";
+    });
+});
+
 
     // Check if there are any events stored
     if (eventData.length > 0) {

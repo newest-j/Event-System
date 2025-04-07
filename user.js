@@ -1,5 +1,8 @@
 const isLoggedIn = localStorage.getItem('user');
 
+
+
+
 // Check if the user is logged in, if not redirect to the signin page
 if (!isLoggedIn) {
     window.location.href = "signin.html";
@@ -13,7 +16,7 @@ signoutButtons.forEach(button => {
     button.addEventListener('click', (e) => {
         e.preventDefault();
         localStorage.removeItem('user');
-        window.location.href = "signin.html";
+        window.location.href = "index.html";
     });
 });
 
@@ -64,3 +67,8 @@ form.addEventListener('submit', (e) => {
         saveEvent(defaultImage); // Use the default image if no image is provided
     }
 });
+
+const userData = JSON.parse(localStorage.getItem('user'));
+if (userData && userData.userName) {
+  document.getElementById('username').textContent = userData.userName;
+}
