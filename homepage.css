@@ -17,7 +17,7 @@ footer p{
 }
 #hero{
     background:url(images/vecteezy_businessperson-updating-schedules-or-planning-business_24162298.jpg);
-    background-size: cover;
+    background-size:auto;
     background-repeat: no-repeat;
     height: 600px;
     /* opacity: 0.8; */
@@ -33,4 +33,13 @@ footer p{
 }
 #hero-text{
     font-size: 20px;
+}
+@media screen and (max-width:760px) {
+    #footer-container{
+        width: 760px;
+    }
+    body{
+        width: 760px;
+    }
+
 }
