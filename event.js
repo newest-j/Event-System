@@ -44,3 +44,7 @@ signoutButtons.forEach(button => {
         </div>
       `;
     }
+    const userData = JSON.parse(localStorage.getItem('user'));
+if (userData && userData.userName) {
+  document.getElementById('username').textContent = userData.userName;
+}
