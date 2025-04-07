@@ -1,5 +1,7 @@
 // Function for handling the register action
-function handleRegisterClick() {
+function handleRegisterClick(e) {
+    e.preventDefault(); // Prevent the default anchor behavior
+
     let name = prompt("Please enter your name:", "John Doe");
 
     if (name) {
@@ -9,7 +11,6 @@ function handleRegisterClick() {
             let ticketCount = prompt("How many tickets would you like to buy?", "1");
 
             if (ticketCount && !isNaN(ticketCount)) {
-                // Do something with the data
                 console.log(`Name: ${name}`);
                 console.log(`Event: ${eventName}`);
                 console.log(`Tickets: ${ticketCount}`);
@@ -25,11 +26,9 @@ function handleRegisterClick() {
 function generateEventCards() {
     const eventData = JSON.parse(localStorage.getItem('events')) || [];
 
-    // Check if there are any events stored
     if (eventData.length > 0) {
         let html = '';
 
-        // Loop through each event and create the HTML content
         for (let i = 0; i < eventData.length; i++) {
             const event = eventData[i];
             html += `
@@ -45,17 +44,17 @@ function generateEventCards() {
             `;
         }
 
-        // Inject the generated HTML into the container
         document.getElementById('eventCardContainer').innerHTML = html;
+    }
 
-        // Attach the event listener to all the dynamically generated 'Register' buttons
-        const registerButtons = document.querySelectorAll('.btn-register');
-        registerButtons.forEach(button => {
-            button.addEventListener('click', handleRegisterClick);
-        });
-    } 
+    // Attach listeners to all 'Register' buttons, including static ones
+    const registerButtons = document.querySelectorAll('.btn-register');
+    registerButtons.forEach(button => {
+        button.addEventListener('click', handleRegisterClick);
+    });
 }
 
-// Call the function to generate the event cards after the DOM content is loaded
+// Run this after DOM is loaded
 document.addEventListener("DOMContentLoaded", generateEventCards);
+
 
