@@ -9,7 +9,7 @@ signoutButtons.forEach(button => {
   button.addEventListener('click', (e) => {
     e.preventDefault();
     localStorage.removeItem('user');
-    window.location.href = "index.html";
+    window.location.href = "/index.html";
   });
 });
 
@@ -22,15 +22,14 @@ if (eventData.length > 0) {
   for (let i = 0; i < eventData.length; i++) {
     const event = eventData[i];
     html += `
-          <div class="card shadow-lg mb-4" style="width: 18rem;">
-            <img src="${event.image}" class="card-img-top" alt="Event Image">
+          <div class="card shadow-lg mb-4 pt-2" style="width: 18rem;">
+            <img src="${event.image}" class="card-img-top" style="height: 15rem" alt="Event Image">
             <div class="card-body">
               <h5 class="card-title">${event.name}</h5>
-              <h6 class="card-subtitle text-muted mb-2">${event.date}</h6>
+              <h6 class="card-subtitle text-muted mb-2">${event.date} <br> ${event.name} has ${event.number} available </h6>
               <p class="card-text">${event.details}</p>
             </div>
           </div>
-          <a href="user.html" class="btn btn-outline-primary">Create Another Event</a>
         `;
   }
 

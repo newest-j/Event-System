@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,12 +8,10 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
         integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
-        <link rel="stylesheet" href="user.css">
+        <link rel="stylesheet" href="/style/event.css">
     <title>Event System</title>
 </head>
-
 <body>
-
     <!-- Offcanvas Sidebar Toggle Button -->
     <button class="btn btn-dark d-md-none m-3" type="button" data-bs-toggle="offcanvas" data-bs-target="#sidebar"
         aria-controls="sidebar">
@@ -30,9 +27,9 @@
                 aria-label="Close"></button>
         </div>
         <div class="offcanvas-body d-flex flex-column p-3">
-            <ul class="nav nav-pills flex-column mb-auto">
+            <ul class="nav nav-pills  flex-column mb-auto">
                 <li class="nav-item">
-                    <a href="user.html" class="nav-link">
+                    <a href="user.html" class="nav-link ">
                         <i class="fa-solid fa-house"></i> Home
                     </a>
                 </li>
@@ -79,7 +76,7 @@
         </div>
     </div>
 
-    <div class="d-flex gap-5">
+    <div class="d-flex">
         <!-- sidebar -->
         <div class="d-flex vh-100 position-sticky left-0 top-0 flex-column flex-shrink-0 p-3 text-white bg-dark"
             style="width: 280px;" id="mysidebar">
@@ -114,12 +111,6 @@
                     </a>
                 </li>
 
-                <li>
-                    <a href="index.html" class="nav-link">
-                         Back Home
-                    </a>
-                </li>
-
             </ul>
             <hr>
             <div class="dropdown">
@@ -140,42 +131,68 @@
                 </ul>
             </div>
         </div>
-        <!-- sidebar ends -->
 
-        <div class="container d-flex justify-content-center align-items-center min-vh-100">
-            <div class="card shadow-lg p-4 rounded-4 w-100" style="max-width: 600px;">
-              <div class="text-center mb-4">
-                <h2 class="fw-bold text-primary">Create New Event</h2>
-                <p class="text-muted">Fill in the details below to add your event</p>
-              </div>
-              <form id="eventForm">
-                <div class="mb-3">
-                  <label for="name" class="form-label fw-semibold">Event Name:</label>
-                  <input type="text" class="form-control rounded-pill px-4" id="name" placeholder="Enter the name of the event" name="name" required>
-                </div>
-          
-                <div class="mb-3">
-                  <label for="date" class="form-label fw-semibold">Event Date:</label>
-                  <input type="date" class="form-control rounded-pill px-4" id="date" name="date" required>
-                </div>
-          
-                <div class="mb-3">
-                  <label for="details" class="form-label fw-semibold">Details About Event:</label>
-                  <textarea class="form-control rounded-4 px-4 py-3" rows="4" id="details" name="details" placeholder="Give a brief description..." required></textarea>
-                </div>
-          
-                <div class="mb-4">
-                  <label for="image" class="form-label fw-semibold">Event Image:</label>
-                  <input type="file" class="form-control" id="image" name="image" accept="image/*">
-                </div>
-          
-                <button type="submit" class="btn btn-primary w-100 rounded-pill py-2 fw-semibold">Submit Event</button>
-              </form>
+    <main class="p-4 text-center container-fluid" style="width:calc(100% - 280px);">
+        <h2 class="pb-2">Overview</h2>
+        <hr>
+        <div class="row gap-4 justify-content-center">
+            <div class="card shadow-lg col-lg-3 col-mg-6 col-11 p-2">
+                <h2 class="card-title">Total minutes spent <span class="secondary fs-6 fw-light">(in
+                        meetings)</span></h2>
+                <hr>
+                <p class="fs-1 text-primary">1223</p>
             </div>
-          </div>
-          
-    </div>
-    <script src="user.js"></script>
-</body>
 
+            <div class="card shadow-lg col-lg-3 col-mg-6 col-11 p-2">
+                <h2 class="card-title">Total users enrolled <span class="secondary fs-6 fw-light">(in
+                        meetings)</span></h2>
+                <hr>
+                <p class="fs-1 text-primary">100k+</p>
+            </div>
+
+            <div class="card shadow-lg col-lg-3 col-mg-6 col-11 p-2">
+                <h2 class="card-title">Total meetings <span class="secondary fs-6 fw-light">(in meetings)</span>
+                </h2>
+                <hr>
+                <p class="fs-1 text-primary">1000</p>
+            </div>
+        </div>
+
+        <h2 class="pb-2 mt-5">Upcoming Event</h2>
+        <a href="/main/user.html" class="btn btn-outline-primary">Create An Event</a>
+        <hr>
+        <div class="row gap-4 justify-content-center">
+          
+
+            <div class="container mt-5">
+                <div id="eventCardContainer" class="row  gap-4 justify-content-center"></div>
+              </div>
+        </div>
+
+
+        </div>
+        
+    </main>
+</div>
+
+
+<div class="modal fade" id="Modal" tabindex="-1" aria-labelledby="ModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="ModalLabel">Schedule Meeting</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <input type="datetime-local" name="" id="" class="form-control">
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">cancel</button>
+                <button type="button" class="btn btn-primary">Submit</button>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="/script/event.js"></script>
+</body>
 </html>

@@ -16,16 +16,12 @@ signoutButtons.forEach(button => {
     button.addEventListener('click', (e) => {
         e.preventDefault();
         localStorage.removeItem('user');
-        window.location.href = "index.html";
+        window.location.href = "/index.html";
     });
 });
 
 
 const form = document.querySelector('#eventForm');
-// const eventName = document.querySelector('#name');
-// const eventDate = document.querySelector('#date');
-// const details = document.querySelector('#details');
-// const eventImage = document.querySelector('#image');
 const button = document.querySelector('.btn');
 
 
@@ -36,9 +32,10 @@ form.addEventListener('submit', (e) => {
     const eventName = formData.get('name').trim();
     const eventDate = formData.get('date').trim();
     const details = formData.get('details').trim();
+    const number = formData.get('number').trim()
     const imageFile = formData.get('image');
 
-    const defaultImage = 'images/default.jpg'; // Make sure this path is correct relative to events.html
+    const defaultImage = '../images/default.jpg'; // Make sure this path is correct relative to events.html
 
     // Load existing events from localStorage or initialize an empty array if none exist
     let events = JSON.parse(localStorage.getItem('events')) || [];
@@ -47,6 +44,7 @@ form.addEventListener('submit', (e) => {
         const newEvent = {
             name: eventName,
             date: eventDate,
+            number: number,
             details: details,
             image: image
         };

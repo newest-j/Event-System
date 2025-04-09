@@ -2,25 +2,31 @@
 function handleRegisterClick(e) {
     e.preventDefault(); // Prevent the default anchor behavior
 
-    let name = prompt("Please enter your name:", "John Doe");
+    const name = document.getElementById("nameInput").value.trim();
+    const eventName = document.getElementById("eventInput").value.trim();
+    const ticketCount = document.getElementById("ticketInput").value.trim();
 
-    if (name) {
-        let eventName = prompt("Enter the name of the event you want to register for:", "Tech Conference");
-
-        if (eventName) {
-            let ticketCount = prompt("How many tickets would you like to buy?", "1");
-
-            if (ticketCount && !isNaN(ticketCount)) {
-                console.log(`Name: ${name}`);
-                console.log(`Event: ${eventName}`);
-                console.log(`Tickets: ${ticketCount}`);
-                alert("Registration completed");
-            } else {
-                alert("Please enter a valid number of tickets.");
-            }
-        }
+    if (!name || !eventName || isNaN(ticketCount) || Number(ticketCount) < 1) {
+      alert("Please fill out all fields correctly.");
+      return;
     }
+
+    console.log(`Name: ${name}`);
+    console.log(`Event: ${eventName}`);
+    console.log(`Tickets: ${ticketCount}`);
+
+    alert(`Thank you, ${name}! You've successfully registered for ${eventName} with ${ticketCount} ticket(s).`);
+
+    // Close modal after successful submission
+    const modal = bootstrap.Modal.getInstance(document.getElementById('registrationModal'));
+    modal.hide();
+
+    // Optionally reset form
+    document.getElementById("registrationForm").reset();
+
 }
+
+
 
 // Function to dynamically generate event cards
 function generateEventCards() {
@@ -33,12 +39,12 @@ function generateEventCards() {
             const event = eventData[i];
             html += `
               <div class="card shadow-lg mb-4 pt-2" style="width: 18rem;">
-                <img src="${event.image}" class="card-img-top" alt="Event Image">
+                <img src="${event.image}" class="card-img-top"  style="height: 15rem; "alt="Event Image">
                 <div class="card-body">
                   <h5 class="card-title">${event.name}</h5>
                   <h6 class="card-subtitle text-muted mb-2">${event.date}</h6>
                   <p class="card-text">${event.details}</p>
-                  <a href="#" class="btn btn-primary btn-register">Register</a>
+                  <a href="#" class="btn btn-primary btn-register"  data-bs-toggle="modal" data-bs-target="#registrationModal">Register</a>
                 </div>
               </div>
             `;
